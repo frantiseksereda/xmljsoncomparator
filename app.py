@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
-
+#gets key: value pairs from json and from xml and compares values for the same keys
 
 @app.route("/upload")
 def upload_file():
