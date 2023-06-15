@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <title>Nahrávání</title>
+</head>
+<body>
+<br>
+
+Nahrát xml a json (utf-8):
+<form action = "http://localhost:5000/uploader-oba" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file1" />
+         <input type = "file" name = "file2" />
+         <input type = "submit"/>
+</form>
+
+Co se nahrálo:
+<br>
+První soubor:
+<br>
+{{xml_to_show}}
+<br>
+Druhý soubor:
+<br>
+{{json_to_show}}
+<br>
+Jsou stejné:
+<br>
+{{same_to_show}}
+
+
+
+</body>
+</html>
