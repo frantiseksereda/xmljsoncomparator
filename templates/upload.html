@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Nahrávání</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 </head>
 <body>
 <br>
 
-Nahrát xml a json (utf-8):
-<form action = "http://localhost:5000/uploader-oba" method = "POST"
-         enctype = "multipart/form-data">
-         <input type = "file" name = "file1" />
-         <input type = "file" name = "file2" />
-         <input type = "submit"/>
-</form>
+<div class="container text-left">
+  <div class="row">
+    <div class="col">
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+            <h5 class="card-title">Nahrát xml a json (utf-8):</h5>
+            <p class="card-text">
+        <form action = "http://localhost:5000/uploader-oba" method = "POST"
+              enctype = "multipart/form-data">
+            <div class="mb-3">
+            <label for="xml" class="form-label col-sm-2 col-form-label" >XML soubor:</label>
+            <input type = "file" name = "file1" id="xml" />
+            </div>
+            <br>
+            <label for="json" class="form-label col-sm-2 col-form-label">JSON soubor:</label>
+            <input type = "file" name = "file2" id="json"/>
+            <br>
+            <br>
+            <input type = "submit" class="btn btn-primary"/>
+        </form>
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+      Rozdílné hodnoty, tabulka:
+        <br>
+        {{table_different_values | safe}}
+        <br>
+        Dictionary z xml:
+        <br>
+        {{uploaded_xml_dict}}
+        <br>
+        <br>
+        Dictionary z json:
+        <br>
+        {{uploaded_json_dict}}
+    </div>
+    <div class="col-sm-4">
+      Stejné hodnoty, tabulka:
+        <br>
+        {{table_same_values | safe}}
+    </div>
+  </div>
+</div>
+
+
 
 <!--Co se nahrálo:
 <br>
@@ -28,7 +70,7 @@ Druhý soubor:
 Jsou stejné:
 <br>
 {{same_to_show}}
-<br>-->
+<br>
 <br>
 Dictionary z xml:
 <br>
@@ -48,9 +90,16 @@ Stejné hodnoty:
 Rozdílné hodnoty:
 <br>
 {{different_values}}
+<br>
+Stejné hodnoty, tabulka:
+<br>
+{{table_same_values | safe}}
+<br>
+Rozdílné hodnoty, tabulka:
+<br>
+{{table_different_values | safe}}
+-->
 
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
